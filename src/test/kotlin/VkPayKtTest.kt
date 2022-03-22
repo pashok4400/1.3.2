@@ -145,7 +145,7 @@ class VkPayKtTest {
 
         val result = calculatePrice(type = typ, lastTranslation = lastTran, lastSutTranslation = lastSutTran, translation = newTran)
 
-        assertEquals(-1, result)
+        assertEquals(+130300, result)
     }
 
     @Test
