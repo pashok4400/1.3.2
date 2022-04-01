@@ -1,5 +1,6 @@
 import org.junit.Assert.*
 import org.junit.Test
+import calculatePrice
 
 class VkPayKtTest {
 
@@ -145,11 +146,19 @@ class VkPayKtTest {
 
         val result = calculatePrice(type = typ, lastTranslation = lastTran, lastSutTranslation = lastSutTran, translation = newTran)
 
-        assertEquals(+130300, result)
+        assertEquals(-1, result)
     }
 
     @Test
-    fun calculatePrice() {
+    fun calculatePriceVkZero() {
+        val typ = "Vk Pay"
+        val lastTran = 30000_00
+        val lastSutTran = 8000_00
+        val newTran: Int = 1000_00
+
+        val result = calculatePrice(type = typ, lastTranslation = lastTran, lastSutTranslation = lastSutTran, translation = newTran)
+
+        assertEquals(-1, result)
     }
 
 
